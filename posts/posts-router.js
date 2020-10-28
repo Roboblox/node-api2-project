@@ -61,7 +61,7 @@ router.delete('/api/posts/:id', (req, res) => {
   Posts.remove(req.params.id)
   .then(count => {
     if (count > 0) {
-      res.status(200).json({ message: 'The psot has been nuked' });
+      res.status(200).json({ message: 'The post has been nuked' });
     } else {
       res.status(404).json({ message: 'The post could not be found' });
     }
@@ -70,7 +70,7 @@ router.delete('/api/posts/:id', (req, res) => {
     // log error to database
     console.log(error);
     res.status(500).json({
-      message: 'Error removing the psot',
+      message: 'Error removing the post',
     });
   });
 });
